@@ -5,7 +5,6 @@ import com.google.common.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 
-import org.alancesar.util.deserializer.Deserializer;
 import org.alancesar.util.reader.UrlReader;
 
 public class ResponseReader<R> {
