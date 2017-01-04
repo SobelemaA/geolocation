@@ -7,13 +7,15 @@ import org.alancesar.geolocation.response.RequestException;
 import org.alancesar.geolocation.service.PlaceService;
 
 public class Place {
+
     private String formattedAddress;
     private Geometry geometry;
     private String icon;
     private String name;
     private String placeId;
-    
-    private Place() {}
+
+    private Place() {
+    }
 
     public String getFormattedAddress() {
         return formattedAddress;
@@ -34,12 +36,11 @@ public class Place {
     public String getPlaceId() {
         return placeId;
     }
-    
+
     public static List<Place> find(String query) {
         try {
             return new PlaceService().findPlaces(query);
         } catch (RequestException e) {
-            e.printStackTrace();
             return null;
         }
     }

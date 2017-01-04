@@ -1,12 +1,9 @@
 package org.alancesar.geolocation.response;
 
 public enum RequestStatus {
-    OK(1 ,"Ok"),
-    ZERO_RESULTS(2, "Zero Results"),
-    OVER_QUERY_LIMIT(3, "Over Query Limit"),
-    REQUEST_DENIED(4, "Request Denied"),
-    INVALID_REQUEST(5, "Invalid Request"),
-    UNKNOWN_ERROR(6, "Unknown Error");
+
+    OK(1, "Ok"), ZERO_RESULTS(2, "Zero Results"), OVER_QUERY_LIMIT(3, "Over Query Limit"), REQUEST_DENIED(4,
+            "Request Denied"), INVALID_REQUEST(5, "Invalid Request"), UNKNOWN_ERROR(6, "Unknown Error"), INVALID_KEY(7, "Invalid Key");
 
     public int id;
     public String description;

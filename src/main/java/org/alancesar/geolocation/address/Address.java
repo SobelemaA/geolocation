@@ -12,12 +12,14 @@ import org.alancesar.geolocation.util.DistanceUtils;
 import java.util.List;
 
 public class Address {
+
     private List<AddressComponents> addressComponents;
     private String formattedAddress;
     private Geometry geometry;
     private String placeId;
 
-    private Address() {}
+    private Address() {
+    }
 
     public List<AddressComponents> getAddressComponents() {
         return addressComponents;
@@ -43,7 +45,6 @@ public class Address {
         try {
             return new PlaceDetailService().findPlacesNearby(geometry.getLocation(), filter);
         } catch (RequestException e) {
-            e.printStackTrace();
             return null;
         }
     }
@@ -56,7 +57,7 @@ public class Address {
             return null;
         }
     }
-    
+
     public static Address get(Location location) {
         try {
             return new GeolocationService().getByLocation(location);

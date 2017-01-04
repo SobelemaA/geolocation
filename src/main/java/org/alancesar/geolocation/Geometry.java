@@ -1,6 +1,7 @@
 package org.alancesar.geolocation;
 
 public class Geometry {
+
     private Location location;
     private LocationType locationType;
     private Viewport viewport;
@@ -18,10 +19,8 @@ public class Geometry {
     }
 
     public enum LocationType {
-        ROOFTOP(1, "Rooftop"),
-        RANGE_INTERPOLATED(2, "Range Interpolated"),
-        GEOMETRIC_CENTER(3, "Geometric Center"),
-        APPROXIMATE(4, "Approximate");
+        ROOFTOP(1, "Rooftop"), RANGE_INTERPOLATED(2, "Range Interpolated"), GEOMETRIC_CENTER(3,
+                "Geometric Center"), APPROXIMATE(4, "Approximate");
 
         public int id;
         public String name;

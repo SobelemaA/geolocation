@@ -5,11 +5,13 @@ import java.util.List;
 import org.alancesar.geolocation.LocationType;
 
 public class AddressComponents {
+
     private String longName;
     private String shortName;
-    List<LocationType> types;
-    
-    private AddressComponents() {}
+    private List<LocationType> types;
+
+    private AddressComponents() {
+    }
 
     public String getLongName() {
         return longName;

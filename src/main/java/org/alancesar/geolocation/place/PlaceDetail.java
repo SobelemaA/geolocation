@@ -6,14 +6,16 @@ import org.alancesar.geolocation.LocationType;
 import java.util.List;
 
 public class PlaceDetail {
+
     private Geometry geometry;
     private String icon;
     private String name;
     private String placeId;
     private List<LocationType> types;
     private String vicinity;
-    
-    private PlaceDetail() {}
+
+    private PlaceDetail() {
+    }
 
     public Geometry getGeometry() {
         return geometry;
@@ -32,7 +34,7 @@ public class PlaceDetail {
     }
 
     public List<LocationType> getType() {
-    	return types;
+        return types;
     }
 
     public String getVicinity() {

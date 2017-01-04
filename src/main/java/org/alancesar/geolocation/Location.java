@@ -1,8 +1,9 @@
 package org.alancesar.geolocation;
 
 public class Location {
-    double lat;
-    double lng;
+    
+    private double lat;
+    private double lng;
 
     public Location(double lat, double lng) {
         this.lat = lat;

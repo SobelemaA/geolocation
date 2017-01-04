@@ -1,34 +1,32 @@
 package org.alancesar.geolocation.test;
 
-import org.alancesar.geolocation.address.Address;
-import org.alancesar.geolocation.place.Place;
-import org.alancesar.geolocation.place.PlaceDetail;
-import org.junit.Test;
-
 import java.io.IOException;
 import java.util.List;
 
+import org.alancesar.geolocation.Config;
+import org.alancesar.geolocation.address.Address;
+import org.alancesar.geolocation.place.Place;
+import org.alancesar.geolocation.place.PlaceDetail;
+import org.junit.Assert;
+import org.junit.Test;
+
 public class SearchTests {
-	
+
     @Test
     public void findPlaces() throws IOException {
+        Config.getInstance().setLanguage("pt");
+
         List<Place> places = Place.find("Shopping Dom Pedro Campinas");
+        Assert.assertTrue(!places.isEmpty());
+
         Address address = Address.get(places.get(0).getFormattedAddress());
+        Assert.assertNotNull(address.getFormattedAddress());
+        Assert.assertTrue(!address.getFormattedAddress().isEmpty());
+
         List<PlaceDetail> placesDetail = address.findPlacesNearby();
-        
-        System.out.println(address.getFormattedAddress());
-        System.out.println();
+        Assert.assertTrue(!placesDetail.isEmpty());
 
-        places.forEach(p -> {
-            System.out.println(p.getFormattedAddress());
-            System.out.println(p.getName());
-            System.out.println();
-        });
-
-        placesDetail.forEach(p -> {
-            System.out.println(p.getName());
-            System.out.println(p.getVicinity());
-            System.out.println();
-        });
+        Assert.assertEquals(address.getFormattedAddress(),
+                "Av. Guilherme Campos, 500 - Santa Genebra, Campinas - SP, 13087-901, Brasil");
     }
 }
